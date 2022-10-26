@@ -21,16 +21,17 @@ public class ChacterInputControllerss : MonoBehaviour
         SetHorizontalMoment();
     }
 
-    void SetHeroMomentSpeed()
+    protected virtual void SetHeroMomentSpeed()
     {
         transform.Translate(Vector3.forward * forwardMomentSpeed * Time.fixedDeltaTime);
     }
-    void Update()
+
+    protected virtual void Update()
     {
-        horizontalValueInput();
+        HorizontalValueInput();
     }
 
-    void horizontalValueInput()
+    private void HorizontalValueInput()
     {
         if(Input.GetMouseButton(0))
         {

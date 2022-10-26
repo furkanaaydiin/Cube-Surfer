@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48539b51609ac2b49aaba4638920ca8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastSpawnPos: {x: 0, y: 0, z: 0}
+  lastSpawnPos: {x: 0, y: 2.58, z: 0}
   BoxCollider: {fileID: 2084304773}
 --- !u!1001 &2114399871
 PrefabInstance:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChacterCupeStack : MonoBehaviour
 {
     public static ChacterCupeStack instance;
-    public List<CupeControllers> cupelist = new List<CupeControllers>();
+    public  List<CupeControllers> cupelist = new List<CupeControllers>();
     private  CupeControllers lowerCupeObject;
    
     private void Awake()
@@ -39,10 +39,7 @@ public class ChacterCupeStack : MonoBehaviour
         cupelist.Add(_CupeControllers);
         UpdateLowerObject();
         _CupeControllers.isCollected = true;
-        hizala();
-        
-        
-        
+        hizala();  
     }
 
     private Coroutine hizalaCorontine;
