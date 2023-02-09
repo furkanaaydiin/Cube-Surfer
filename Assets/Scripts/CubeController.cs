@@ -23,8 +23,9 @@ private void SetCubeRaycastHit()
     if(m_Hit.collider.CompareTag("Cube"))
     {
         CharacterCubeStack.instance.IncreaseCubeStack(m_Hit.collider.GetComponent<CubeController>());
+        UIController.Instance.CharacterScoreText();
     }
-    else if(m_Hit.collider.CompareTag("Obstacle")) 
+    else if(m_Hit.collider.CompareTag("Obstacle"))
     {
         if (CharacterCubeStack.instance.cubeList.Count <=1) 
         {
@@ -33,6 +34,12 @@ private void SetCubeRaycastHit()
         }
         CharacterCubeStack.instance.DecreaseCubeStack(this);
     }
+    else if (m_Hit.collider.CompareTag("Finish"))
+    {
+        CharacterCubeStack.instance.DecreaseCubeStack(this);
+    }
+   
+   
 
 }
 
