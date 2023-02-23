@@ -1,15 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameManager Instance;
-    private bool _isMove => isMove;
-    public static bool isMove;
-    private bool _isDead => isDead;
-    public static bool isDead;
+    private bool İsMove => IsMove;
+    public static bool IsMove;
+    private bool gameOver => GameOver;
+    public static bool GameOver;
+    private bool isDead => IsDead;
+    public static bool IsDead;
 
     private void Awake()
     {

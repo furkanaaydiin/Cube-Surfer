@@ -42,11 +42,10 @@ public class ScoreCounter : MonoBehaviour
 
     public void AddScore(int value) => Score += value;
     
-    public void RemoveScore(int value) => Score -= value;
+    public void RemoveScore(int value) => Score -= value; //TODO 
 
     public void AddDiamond(int value)
     {
         Diamond += value;
-        
     }
 }

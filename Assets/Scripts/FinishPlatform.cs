@@ -7,7 +7,7 @@ namespace Character
 
         [SerializeField] private MeshRenderer[] finishCubeRenderer;
 
-        private Color[] finishPlatformColor =
+        private readonly Color[] finishPlatformColor =
         { 
             Color.green, Color.red, Color.yellow, Color.magenta, Color.blue,
             Color.green, Color.red, Color.yellow, Color.magenta, Color.blue,

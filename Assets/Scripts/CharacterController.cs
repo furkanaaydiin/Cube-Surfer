@@ -1,33 +1,50 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Character
 {
     public class CharacterController : MonoBehaviour
-    { 
+    {
+        public static CharacterController Instance;
         private float HorizontalValue => horizontalValue;
         private  float horizontalValue;
         [SerializeField] private float forwardSpeed;
         [SerializeField] private float horizontalSpeed;
         [SerializeField] private float horizontalLimitValue;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private void FixedUpdate()
         {
-            if (!GameManager.isMove) return;
+            if (!GameManager.IsMove) return;
             SetHeroMomentSpeed();
             SetHorizontalMoment();
             HorizontalValueInput();
 
         }
+     
         private void SetHeroMomentSpeed()
         {
             transform.Translate(Vector3.forward * (forwardSpeed * Time.fixedDeltaTime));
             CharacterAnimation.Instance.RunAnimation();
-            if (!GameManager.isDead) return;
+            if (!GameManager.GameOver) return;
             {
-                forwardSpeed = 0;
-                horizontalSpeed = 0f;
+                GameOverValue();
             }
         }
+
+        public void GameOverValue()
+        {
+            forwardSpeed = 0;
+            horizontalSpeed = 0f;
+        }
+            
+        
         private void HorizontalValueInput()
         {
             if(Input.GetMouseButton(0))

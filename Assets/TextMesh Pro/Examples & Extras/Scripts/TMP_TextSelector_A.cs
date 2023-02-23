@@ -10,7 +10,7 @@ namespace TMPro.Examples
     {
         private TextMeshPro m_TextMeshPro;
 
-        private Camera m_Camera;
+        private UnityEngine.Camera m_Camera;
 
         private bool m_isHoveringObject;
         private int m_selectedLink = -1;

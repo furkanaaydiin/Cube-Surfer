@@ -8,7 +8,6 @@ public class CharacterAnimation : MonoBehaviour
     public static CharacterAnimation Instance;
     [SerializeField] public Animator animator;
     private static readonly int İsMove = Animator.StringToHash("isMove");
-    private static readonly int İsDead = Animator.StringToHash("isDead");
     private static readonly int İsWin = Animator.StringToHash("isWin");
 
     private void Awake()
@@ -18,17 +17,11 @@ public class CharacterAnimation : MonoBehaviour
 
     public void RunAnimation()
     {
-        if (GameManager.isMove)
+        if (GameManager.IsMove)
             animator.SetBool(İsMove,true);
 
     }
-
-    private void DeadAnimation()
-    {
-        animator.SetBool(İsDead,true);
-    }
-
-    private void WinAnimation()
+    public void WinAnimation()
     {
         animator.SetBool(İsWin,true);
     }
